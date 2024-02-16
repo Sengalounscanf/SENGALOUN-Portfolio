@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+        }
+       .Number{
+            font-size: 20px;
+        }
+        #option{
+            font-size: 20px;
+        }
+        .list01 li{
+            width: 100px;
+            height: 20px;
+            border: 1px solid black;
+            list-style: none;
+            cursor: pointer;
+        }
+        .list01 li:nth-child(1) {
+            color: red; 
+        }
+        .list01 li:nth-child(2){
+            color: green;   
+        }
+        .list01 li:nth-child(3){
+            color: blue;   
+        }
+        .list01 li:nth-child(4){
+            color: black;  
+        }
+        .list01 li:nth-child(5){
+            color: yellow;   
+        }
+        .list01 li:nth-child(1):hover{
+            color: white;
+            background-color: red;
+        }
+        .list01 li:nth-child(2):hover{
+            color: white;
+            background-color: green;
+        }
+        .list01 li:nth-child(3):hover{
+            color: white;
+            background-color: blue;
+        }  .list01 li:nth-child(4):hover{
+            color: white;
+            background-color: black;
+        }  .list01 li:nth-child(5):hover{
+            color: white;
+            background-color:yellow;
+        }
+        #box_div{
+            width: 400px;
+            height: 300px;
+            background-color: lightgray;
+            display: none;
+            font-size: 80px;
+            text-align: center;
+            padding-top: 150px;
+            position: relative;
+            top: -250px;
+            left: 100px;
+            border: 3px solid red;
+            border-radius: 10px;
+            
+            
+        }
+        #showing-name{
+            text-align: center;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <div>
+        <table border="1" style="width: 100%; ">
+            <tr>
+                <td colspan="2"  style="text-align: center;">Introduce my Self</td>
+            </tr>
+            <tr>
+                <td>Name</td> <br>
+                <td> <input id="showing-name" type="text" placeholder="Insert your name"></td>
+                
+            </tr>
+            <tr>
+                <td>Favorite Season</td>
+                <td>
+                <div>
+                    <input type="checkbox" id="p1" ><label for="p1">Spring</label>
+                    <input type="checkbox" id="p2" ><label for="p2">Winter</label>
+                    <input type="checkbox" id="p3" ><label for="p3">Summer</label>
+                    <input type="checkbox" id="p4" ><label for="p4">Fall</label>
+                </div>
+            </td>
+            </tr>
+        
+            <tr>
+                <td>Number</td>
+                <td class="Number">
+                     <ul><input type="radio"><label for="Number">1</label></ul>
+                     <ul><input type="radio"><label for="Number">2</label></ul>
+                     <ul><input type="radio"><label for="Number">3</label></ul>
+                     <ul><input type="radio"><label for="Number">4</label></ul>
+                     <ul><input type="radio"><label for="Number">5</label></ul>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Weather</td>
+                <td>
+                    <select name="" id="option">
+                        <option>Sunny</option>
+                        <option>Cloudy</option>
+                        <option>Rainy</option>
+                        <option>Windy</option>
+                    </select>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Name</td> <br>
+                <td> <input id="showing2" type="text" disabled value="SENGALOUN"></td>
+                
+            </tr>
+
+            <tr>
+                <td>Color</td>
+                <td>
+                    <ul  class="list01">
+                        <li >RED</li>
+                        <li>GREEN</li>
+                        <li>BLUE</li>
+                        <li>BLACK</li>
+                        <li>WHITE</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <tr>
+                    <td colspan="3"  style="text-align: center; " >
+                        <button type="submit" onclick="welcome_msg()">SHOW-BOX1</button>
+                        <button type="submit" onclick="welcome_msg2()">SHOW-BOX2</button>
+                    </td>
+                </tr>
+            </tr>
+            <tr>
+        </table>
+
+        <div id="box_div" onclick="hide()"></div>
+    </div>
+</body>
+
+<script>
+    function  welcome_msg(){
+       document.getElementById('box_div').style.display='block';
+       document.getElementById('box_div').innerHTML=document.getElementById('showing-name').value;
+    }
+    function welcome_msg2(){
+       document.getElementById('box_div').style.display='block';
+       document.getElementById('box_div').innerHTML=document.getElementById('showing2').value;
+    }
+    function  hide(){
+       document.getElementById('box_div').style.display='none';
+    }
+</script>
+</html>
